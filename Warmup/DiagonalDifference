@@ -1,0 +1,34 @@
+long absoluteSum (int n, int a[n][n]) { 
+    long sum1 = 0;
+    long sum2 = 0;
+    long summ = 0;
+     for(int a_i = 0; a_i < n; a_i++){
+       for(int a_j = 0; a_j < n; a_j++){
+           if (a_i == a_j) {
+               sum1 = sum1 + a[a_i][a_j];
+           }
+           if (a_j == n - a_i - 1) {
+               sum2 = sum2 + a[a_i][a_j];
+           }
+       }
+    }
+    summ = labs(sum1-sum2);
+    return summ;
+}
+
+int main(int argc, const char * argv[]){
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    int n;
+    long summ;
+    scanf("%i",&n);
+    int a[n][n];
+    for(int a_i = 0; a_i < n; a_i++){
+       for(int a_j = 0; a_j < n; a_j++){
+          scanf("%d",&a[a_i][a_j]);
+       }
+    }
+    summ = absoluteSum (n, a);
+    printf("%ld", summ);
+    [pool drain];
+    return 0;
+}
