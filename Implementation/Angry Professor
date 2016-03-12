@@ -1,0 +1,28 @@
+int main(int argc, const char * argv[]){
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    int t;
+    scanf("%i",&t);
+    for(int a0 = 0; a0 < t; a0++){
+        int n;
+        int k;
+        scanf("%i %i",&n,&k);
+        int a[n];
+        for(int a_i = 0; a_i < n; a_i++){
+           scanf("%d",&a[a_i]);
+        }
+        int negative = 0;
+        for (int i=0;i<n; i++) {
+            if (a[i]<=0) {
+                negative ++;
+            }
+        }
+        if (negative >=k) {
+            printf("NO\n");
+        } else {
+            printf("YES\n");
+        }
+    }
+    
+    [pool drain];
+    return 0;
+}
